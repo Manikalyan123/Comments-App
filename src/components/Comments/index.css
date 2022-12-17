@@ -1,0 +1,98 @@
+/* Write your CSS here */
+.Cont {
+  height: 100vh;
+  background-color: #dee0e3;
+}
+.Content {
+  height: 57vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+.passage {
+  font-size: 15px;
+  color: #1e293b;
+}
+.heading {
+  font-size: 50px;
+  color: black;
+}
+.big-image {
+  margin-top: 140px;
+  height: 30vh;
+  width: 35vw;
+}
+.Name-Input {
+  height: 60px;
+  width: 20vw;
+  font-size: 15px;
+  border-radius: 6px;
+  border: solid 1px #475569;
+  margin-bottom: 10px;
+}
+.Comment-Input {
+  height: 200px;
+  width: 20vw;
+  font-size: 15px;
+  border-radius: 6px;
+  border: solid 1px #475569;
+}
+.form-cont {
+  display: flex;
+  flex-direction: column;
+}
+.submit-button {
+  height: 40px;
+  width: 12vw;
+  background-color: #0284c7;
+  border: none;
+  border-radius: 1px;
+  margin-top: 10px;
+  color: white;
+}
+* {
+  font-family: 'Roboto';
+}
+.count-cont {
+  background-color: #0284c7;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.count {
+  color: white;
+  font-size: 15px;
+}
+.comments-count-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100px;
+  width: 10vw;
+}
+.comments-box {
+  padding: 30px;
+  padding-left: 120px;
+}
+.count-pass-cont {
+  height: 30px;
+  width: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.count-passage {
+  margin-left: 4px;
+}
+.unorderlist {
+  padding-left: 30px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
