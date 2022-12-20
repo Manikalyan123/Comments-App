@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {v4} from 'uuid'
+import {v4 as uuidv4} from 'uuid'
 import './index.css'
 import CommentItem from '../CommentItem'
 
@@ -26,7 +26,7 @@ class Comments extends Component {
     const newComment = {
       name,
       comment,
-      id: v4,
+      id: uuidv4(),
       color: initialContainerBackgroundClassNames[0],
       isLiked: false,
     }
@@ -37,6 +37,12 @@ class Comments extends Component {
     }))
   }
 
+  deleteComment = id => {
+    const {comments} = this.state
+    const deletedList = comments.filter(each => each.id !== id)
+    this.setState({comments: deletedList})
+  }
+
   onChangeName = event => {
     this.setState({name: event.target.value})
   }
@@ -45,12 +51,23 @@ class Comments extends Component {
     this.setState({comment: event.target.value})
   }
 
+  onClickLike = id => {
+    this.setState(prevState => ({
+      comments: prevState.commentsList.map(eachComment => {
+        if (id === eachComment.id) {
+          return {...eachComment, isLiked: !eachComment.isLiked}
+        }
+        return eachComment
+      }),
+    }))
+  }
+
   render() {
     const {comments, name, comment} = this.state
     return (
       <div className="Cont">
         <div className="Content">
-          <form className="form-cont">
+          <form className="form-cont" onSubmit={this.onAddComment}>
             <h1 className="heading">Comments</h1>
             <p className="passage">Say something about 4.0 Technologies</p>
             <input
@@ -66,11 +83,7 @@ class Comments extends Component {
               placeholder="Comment"
               value={comment}
             />
-            <button
-              type="submit"
-              className="submit-button"
-              onSubmit={this.onAddComment}
-            >
+            <button type="submit" className="submit-button">
               Add Comment
             </button>
           </form>
@@ -92,7 +105,12 @@ class Comments extends Component {
           </div>
           <ul className="unorderlist">
             {comments.map(each => (
-              <CommentItem comments={each} key={each.id} />
+              <CommentItem
+                comments={each}
+                key={each.id}
+                onClickLike={this.onClickLike}
+                deleteComment={this.deleteComment}
+              />
             ))}
           </ul>
         </div>

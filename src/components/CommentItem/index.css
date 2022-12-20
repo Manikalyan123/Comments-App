@@ -1,39 +1,91 @@
 .amber {
   background-color: #f59e0b;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
 }
 
 .blue {
   background-color: #0b69ff;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
 }
 
 .orange {
   background-color: #f97316;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
 }
 
 .emerald {
   background-color: #10b981;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
 }
 
 .teal {
   background-color: #14b8a6;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
 }
 
 .red {
   background-color: #b91c1c;
+
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
 }
 
 .light-blue {
   background-color: #0ea5e9;
+
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 70px;
 }
 
 .list-order {
   list-style: none;
   padding-left: 0px;
+  margin-bottom: 20px;
 }
 .first-letter-cont {
   background-color: #0284c7;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -43,16 +95,16 @@
 .comment-details-cont {
   display: flex;
   flex-direction: row;
-
   align-items: center;
 }
+
 .Name {
-  font-size: 30px;
+  font-size: 20px;
   margin: 10px;
 }
 .time-passage {
   color: ;
-  font-size: 15px;
+  font-size: 13px;
 }
 .like-delete-cont {
   display: flex;
@@ -60,4 +112,25 @@
   justify-content: space-between;
 }
 
+.del-btn {
+  height: 35px;
+  width: 42px;
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+}
+.like-btn {
+  height: 35px;
+  width: 42px;
+  padding: 0px;
+  border: none;
+}
+.Like-image {
+  height: 25px;
+  width: 25px;
+}
+.Delete-image {
+  height: 25px;
+  width: 25px;
+}
 /* Write your CSS here */

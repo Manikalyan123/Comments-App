@@ -2,13 +2,25 @@
 import './index.css'
 
 const CommentItem = props => {
-  const {comments} = props
-  const {name, comment, id} = comments
+  const {comments, deleteComment, onClickLike} = props
+  const {name, comment, isLiked, id, color} = comments
+
+  const onLikeClick = () => {
+    onClickLike(id)
+  }
+
+  const deleteClick = () => {
+    deleteComment(id)
+  }
+
+  const LikeImage = isLiked
+    ? 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
+    : 'https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png'
 
   return (
     <li className="list-order">
       <div className="comment-details-cont">
-        <div className="first-letter-cont">
+        <div className={color}>
           <p>{name[0]}</p>
         </div>
         <h1 className="Name">{name}</h1>
@@ -16,15 +28,11 @@ const CommentItem = props => {
       </div>
       <p>{comment}</p>
       <div className="like-delete-cont">
-        <button type="button">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/comments-app/like-img.png"
-            alt="like"
-            className="Like-image"
-          />
+        <button type="button" className="like-btn" onClick={onLikeClick}>
+          <img src={LikeImage} alt="like" className="Like-image" />
         </button>
 
-        <button type="button">
+        <button type="button" className="del-btn" onClick={deleteClick}>
           <img
             src="https://assets.ccbp.in/frontend/react-js/comments-app/delete-img.png"
             alt="delete"
@@ -32,6 +40,7 @@ const CommentItem = props => {
           />
         </button>
       </div>
+      <hr />
     </li>
   )
 }
