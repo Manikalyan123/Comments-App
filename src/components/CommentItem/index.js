@@ -2,12 +2,15 @@
 import './index.css'
 
 const CommentItem = props => {
-  const {comments, deleteComment, onClickLike} = props
-  const {name, comment, isLiked, id, color} = comments
+  const {comments, deleteComment, onClickLike, color} = props
+  const {name, comment, isLiked, id} = comments
 
   const onLikeClick = () => {
     onClickLike(id)
   }
+
+  const xColor = Math.ceil(Math.random() * color.length)
+  console.log(xColor)
 
   const deleteClick = () => {
     deleteComment(id)
@@ -20,7 +23,7 @@ const CommentItem = props => {
   return (
     <li className="list-order">
       <div className="comment-details-cont">
-        <div className={color}>
+        <div className={color[xColor]}>
           <p>{name[0]}</p>
         </div>
         <h1 className="Name">{name}</h1>

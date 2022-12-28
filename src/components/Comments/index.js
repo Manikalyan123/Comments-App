@@ -27,7 +27,6 @@ class Comments extends Component {
       name,
       comment,
       id: uuidv4(),
-      color: initialContainerBackgroundClassNames[0],
       isLiked: false,
     }
     this.setState(prevState => ({
@@ -110,6 +109,7 @@ class Comments extends Component {
                 key={each.id}
                 onClickLike={this.onClickLike}
                 deleteComment={this.deleteComment}
+                color={initialContainerBackgroundClassNames}
               />
             ))}
           </ul>
