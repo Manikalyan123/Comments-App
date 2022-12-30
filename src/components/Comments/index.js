@@ -28,6 +28,13 @@ class Comments extends Component {
       comment,
       id: uuidv4(),
       isLiked: false,
+      date: new Date(),
+      backgrounColor:
+        initialContainerBackgroundClassNames[
+          Math.ceil(
+            Math.random() * initialContainerBackgroundClassNames.length - 1,
+          )
+        ],
     }
     this.setState(prevState => ({
       comments: [...prevState.comments, newComment],
@@ -52,7 +59,7 @@ class Comments extends Component {
 
   onClickLike = id => {
     this.setState(prevState => ({
-      comments: prevState.commentsList.map(eachComment => {
+      commentsList: prevState.commentsList.map(eachComment => {
         if (id === eachComment.id) {
           return {...eachComment, isLiked: !eachComment.isLiked}
         }
@@ -63,6 +70,7 @@ class Comments extends Component {
 
   render() {
     const {comments, name, comment} = this.state
+
     return (
       <div className="Cont">
         <div className="Content">
@@ -109,7 +117,6 @@ class Comments extends Component {
                 key={each.id}
                 onClickLike={this.onClickLike}
                 deleteComment={this.deleteComment}
-                color={initialContainerBackgroundClassNames}
               />
             ))}
           </ul>

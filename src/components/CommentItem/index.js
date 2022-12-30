@@ -1,20 +1,19 @@
 // Write your code here
 import './index.css'
+import {formatDistanceToNow} from 'date-fns'
 
 const CommentItem = props => {
-  const {comments, deleteComment, onClickLike, color} = props
-  const {name, comment, isLiked, id} = comments
+  const {comments, deleteComment, onClickLike} = props
+  const {name, comment, isLiked, id, backgrounColor, date} = comments
 
   const onLikeClick = () => {
     onClickLike(id)
   }
 
-  const xColor = Math.ceil(Math.random() * color.length)
-  console.log(xColor)
-
   const deleteClick = () => {
     deleteComment(id)
   }
+  const timeOfPost = formatDistanceToNow(date)
 
   const LikeImage = isLiked
     ? 'https://assets.ccbp.in/frontend/react-js/comments-app/liked-img.png'
@@ -23,11 +22,11 @@ const CommentItem = props => {
   return (
     <li className="list-order">
       <div className="comment-details-cont">
-        <div className={color[xColor]}>
+        <div className={backgrounColor}>
           <p>{name[0]}</p>
         </div>
         <h1 className="Name">{name}</h1>
-        <p className="time-passage">less than a minute</p>
+        <p className="time-passage">{timeOfPost} ago</p>
       </div>
       <p>{comment}</p>
       <div className="like-delete-cont">
